@@ -34,6 +34,7 @@ defmodule Rumbl.VideoController do
 
   def show(conn, %{"id" => id}, user) do
     video = Repo.get!(user_videos(user), id)
+    video = Repo.preload(video, :category)
     render(conn, "show.html", video: video)
   end
 
