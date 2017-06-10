@@ -34,4 +34,6 @@ defmodule Rumbl.UserSocket do
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil
+
+  channel "videos:*", Rumbl.VideoChannel
 end
